@@ -11,12 +11,12 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("user")
-@RestController
+@RestController // JSON으로 반환하는 컨트롤러(각 메소드마다 @ResponseBody 어노테이션을 이 어노테이션 혀나로 해결)
 public class UserController {
 
     private final UserService userService;
 
-    @GetMapping
+    @GetMapping // HTTP Method Get 요청 api
     public List<User> getUserList() {
         return userService.getUserList();
     }

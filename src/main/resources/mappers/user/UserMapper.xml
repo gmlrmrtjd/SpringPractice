@@ -10,9 +10,20 @@
             id,
             login_id
         FROM
-            user
+            USER_TABLE
         ORDER by
             id asc
     </select>
+
+    <insert id="insertUser">
+        INSERT INTO USER_TABLE (
+                                id,
+                                login_id
+                                )
+        VALUES (
+                USER_SEQ.NEXTVAL,
+                'asdf'
+               )
+    </insert>
 
 </mapper>
