@@ -1,5 +1,6 @@
 package com.example.springpractice.controller;
 
+import com.example.springpractice.domain.SampleVO;
 import lombok.extern.log4j.Log4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,5 +18,17 @@ public class SampleController {
         log.info("MIME TYPE: " + MediaType.TEXT_PLAIN_VALUE);
 
         return "안녕하세요";
+    }
+
+    @GetMapping(value = "/getSample"
+                ,produces = {MediaType.APPLICATION_JSON_UTF8_VALUE,
+                            MediaType.APPLICATION_XML_VALUE})
+    public SampleVO getSample() {
+        return new SampleVO(112, "스타", "로드");
+    }
+
+    @GetMapping(value = "getSample2")
+    public SampleVO getSample2() {
+        return new SampleVO(113, "로켓", "라쿤");
     }
 }
