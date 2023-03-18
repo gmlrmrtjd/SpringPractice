@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BookStoreTest {
+class BookStoreTest {
 
     @Test
-    public void testName () {
+    void testName () {
         BookStore bookStore = new BookStore();
         bookStore.setLocation("Seattle");
 
